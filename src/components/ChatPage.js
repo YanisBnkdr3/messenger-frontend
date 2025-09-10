@@ -3,7 +3,10 @@ import io from "socket.io-client";
 import api from "../api";
 import "../styles/ChatPage.css"; // Import CSS
 
-const socket = io("https://messenger-backend-zqve.onrender.com/");
+const socket = io("https://messenger-backend-zqve.onrender.com", {
+  transports: ["websocket"],
+  withCredentials: true,
+});
 
 export default function ChatPage({ user, setUser }) {
   const [friends, setFriends] = useState([]);
