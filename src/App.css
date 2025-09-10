@@ -1,38 +1,139 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* Container principal */
+.app-container {
+  background: #0d0d0d;
   min-height: 100vh;
+  color: #fff;
+}
+
+/* NAVBAR */
+.navbar {
+  padding: 15px 30px;
+  background: linear-gradient(90deg, #2f0a40, #5a189a);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  margin: 0;
+  color: #e0aaff;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-btn {
+  background: #2f0a40;
+  color: #e0aaff;
+  border: 1px solid #5a189a;
+  border-radius: 8px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background: #5a189a;
+  color: #fff;
+}
+
+.logout-btn {
+  background: linear-gradient(90deg, #5a189a, #b02a37);
+}
+
+/* CONTENU */
+.page-content {
+  padding: 20px;
+}
+
+/* HOME PAGE */
+.home-container {
+  background: linear-gradient(135deg, #0d0d0d, #2f0a40);
+  min-height: 100vh;
+  color: #fff;
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.home-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.home-title {
+  font-size: 2.5rem;
+  color: #e0aaff;
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.home-description {
+  max-width: 600px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.start-btn {
+  font-size: 1.1rem;
+  padding: 12px 25px;
+  background: #5a189a;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.start-btn:hover {
+  background: #7b2cbf;
+}
+
+/* FOOTER */
+.footer {
+  padding: 15px;
+  text-align: center;
+  background: #1a1a1a;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .nav-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .nav-btn {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .home-title {
+    font-size: 1.8rem;
+  }
+
+  .home-description {
+    font-size: 1rem;
+  }
+
+  .start-btn {
+    width: 100%;
   }
 }

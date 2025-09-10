@@ -1,0 +1,118 @@
+/* Container global */
+.auth-container {
+  background: linear-gradient(135deg, #0d0d0d, #2f0a40);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Carte centrale */
+.auth-card {
+  background: #1a1a1a;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  color: #fff;
+}
+
+/* Titre */
+.auth-card h2 {
+  margin-bottom: 20px;
+  color: #e0aaff;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* Formulaire */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.auth-form input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #5a189a;
+  background: #0d0d0d;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.auth-form input:focus {
+  border-color: #9d4edd;
+  box-shadow: 0 0 8px #9d4edd;
+}
+
+/* Bouton */
+.auth-form button {
+  background: #5a189a;
+  color: #fff;
+  font-size: 1.1rem;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.auth-form button:hover {
+  background: #7b2cbf;
+  transform: scale(1.05);
+}
+
+/* Lien Connexion/Inscription */
+.toggle-auth {
+  margin-top: 15px;
+  color: #e0aaff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.toggle-auth:hover {
+  color: #9d4edd;
+ 
+}
+.auth-toggle {
+  margin-top: 15px;
+  color: #9d4edd;
+  font-weight: bold;
+  cursor: pointer; /* 🔹 main au survol */
+ 
+  transition: color 0.3s ease;
+}
+
+.auth-toggle:hover {
+  color: #e0aaff; /* 🔹 couleur plus claire au hover */
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .auth-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .auth-title {
+    font-size: 1.4rem;
+  }
+
+  .auth-input,
+  .auth-button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .auth-toggle {
+    font-size: 0.9rem;
+  }
+}
