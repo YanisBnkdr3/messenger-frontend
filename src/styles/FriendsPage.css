@@ -1,46 +1,32 @@
 .friends-container {
-  padding: 20px;
   background: linear-gradient(135deg, #0d0d0d, #2f0a40);
   min-height: 100vh;
+  padding: 20px;
   color: #fff;
-  font-family: "Segoe UI", sans-serif;
 }
 
 .friends-title {
+  font-size: 1.8rem;
   color: #e0aaff;
   margin-bottom: 20px;
 }
 
-.friends-section {
-  margin-bottom: 30px;
-}
-
-.friends-subtitle {
-  color: #9d4edd;
-  margin-bottom: 10px;
-}
-
-.friends-empty {
-  color: #aaa;
-  font-style: italic;
-}
-
 .friend-card {
   background: #1a1a1a;
-  border: 1px solid #5a189a;
-  border-radius: 10px;
-  padding: 12px;
-  margin-bottom: 12px;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 15px;
   display: flex;
   align-items: center;
   gap: 12px;
-  transition: 0.3s;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
 }
 
 .friend-avatar {
-  width: 45px;
-  height: 45px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
+  border: 3px solid #5a189a;
   object-fit: cover;
 }
 
@@ -49,113 +35,40 @@
 }
 
 .friend-name {
-  margin: 0;
   font-weight: bold;
   color: #fff;
 }
 
-.friend-date {
-  font-size: 0.8rem;
-  color: #aaa;
-}
-
-.status-dot {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  margin-left: 6px;
-}
-
-.status-dot.online {
-  background-color: limegreen;
-}
-
-.status-dot.offline {
-  background-color: red;
-}
-
-.add-btn {
-  background: #5a189a;
+.add-btn, .accept-btn, .reject-btn {
+  border-radius: 12px;
+  padding: 10px 15px;
+  font-weight: bold;
   border: none;
-  padding: 8px 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  color: #fff;
-  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
-.accept-btn {
-  background: green;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  color: #fff;
-  font-weight: bold;
-  margin-right: 8px;
+.add-btn { background: #5a189a; color: #fff; }
+.accept-btn { background: #00c851; color: #fff; }
+.reject-btn { background: #ff4444; color: #fff; }
+
+.add-btn:hover, .accept-btn:hover, .reject-btn:hover {
+  opacity: 0.9;
 }
 
-.reject-btn {
-  background: red;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  color: #fff;
-  font-weight: bold;
-}
-/* 📱 Responsive */
+/* Responsive */
 @media (max-width: 768px) {
-  .friends-container {
-    padding: 10px;
-  }
-
   .friend-card {
     flex-direction: column;
     align-items: flex-start;
-    padding: 15px;
   }
 
   .friend-avatar {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
   }
 
-  .add-btn,
-  .accept-btn,
-  .reject-btn {
+  .add-btn, .accept-btn, .reject-btn {
     width: 100%;
     margin-top: 8px;
-    padding: 12px;
-    font-size: 1rem;
-  }
-
-  .friend-name {
-    font-size: 0.9rem;
-  }
-}
-/* 📱 Responsive */
-@media (max-width: 768px) {
-  .profile-card {
-    width: 100%;
-    max-width: 100%;
-    padding: 20px;
-  }
-
-  .profile-avatar {
-    width: 90px;
-    height: 90px;
-  }
-
-  .file-label,
-  .profile-btn {
-    width: 100%;
-    font-size: 1rem;
-    padding: 12px;
-  }
-
-  .profile-title {
-    font-size: 1.3rem;
   }
 }
