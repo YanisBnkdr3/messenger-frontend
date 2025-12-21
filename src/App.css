@@ -1,21 +1,29 @@
-/* Container principal */
+/* =======================================
+   CONTAINER PRINCIPAL
+======================================= */
 .app-container {
   background: #0d0d0d;
   min-height: 100vh;
   color: #fff;
+  font-family: "Segoe UI", "Roboto", sans-serif;
 }
 
-/* NAVBAR */
+/* =======================================
+   NAVBAR
+======================================= */
 .navbar {
   padding: 15px 30px;
   background: linear-gradient(90deg, #2f0a40, #5a189a);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 2px solid #7b2cbf;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
 .logo {
-  margin: 0;
+  font-size: 1.6rem;
+  font-weight: bold;
   color: #e0aaff;
 }
 
@@ -28,11 +36,10 @@
   background: #2f0a40;
   color: #e0aaff;
   border: 1px solid #5a189a;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 8px 15px;
-  cursor: pointer;
   font-weight: bold;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .nav-btn:hover {
@@ -42,71 +49,71 @@
 
 .logout-btn {
   background: linear-gradient(90deg, #5a189a, #b02a37);
+  color: #fff;
 }
 
-/* CONTENU */
-.page-content {
-  padding: 20px;
-}
-
-/* HOME PAGE */
+/* =======================================
+   HOME PAGE
+======================================= */
 .home-container {
   background: linear-gradient(135deg, #0d0d0d, #2f0a40);
   min-height: 100vh;
-  color: #fff;
   display: flex;
   flex-direction: column;
-}
-
-.home-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
+  justify-content: center;
   padding: 30px;
+  text-align: center;
 }
 
 .home-title {
   font-size: 2.5rem;
   color: #e0aaff;
   margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .home-description {
   max-width: 600px;
   font-size: 1.1rem;
   line-height: 1.6;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  color: #ccc;
 }
 
 .start-btn {
-  font-size: 1.1rem;
-  padding: 12px 25px;
-  background: #5a189a;
+  background: linear-gradient(90deg, #5a189a, #7b2cbf);
   color: #fff;
   border: none;
-  border-radius: 8px;
-  cursor: pointer;
+  border-radius: 12px;
+  padding: 12px 25px;
+  font-size: 1.1rem;
   font-weight: bold;
-  transition: 0.3s;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(91,33,134,0.4);
+  transition: all 0.3s ease;
 }
 
 .start-btn:hover {
-  background: #7b2cbf;
+  background: linear-gradient(90deg, #7b2cbf, #9d4edd);
+  transform: scale(1.05);
 }
 
-/* FOOTER */
+/* =======================================
+   FOOTER
+======================================= */
 .footer {
   padding: 15px;
   text-align: center;
   background: #1a1a1a;
   color: #aaa;
   font-size: 0.9rem;
+  border-top: 1px solid #5a189a;
 }
 
-/* 📱 Responsive Design */
+/* =======================================
+   RESPONSIVE
+======================================= */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
