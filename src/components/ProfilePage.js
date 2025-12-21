@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import api from "../api";
-import "../styles/ProfilePage.css"; // 🔹 Import CSS
+import "../styles/ProfilePage.css";
 
 export default function ProfilePage({ user, setUser }) {
   const [file, setFile] = useState(null);
+  const [preview, setPreview] = useState(user.profilePic || "");
 
   // Convertir fichier → Base64
   const toBase64 = (file) =>
@@ -37,8 +38,9 @@ export default function ProfilePage({ user, setUser }) {
     <div className="profile-container">
       <div className="profile-card">
         <h2 className="profile-title">👤 Mon profil</h2>
+
         <img
-          src={user.profilePic || "https://via.placeholder.com/120"}
+          src={preview || user.profilePic || "https://via.placeholder.com/120"}
           alt="Profil"
           className="profile-avatar"
         />
@@ -47,12 +49,20 @@ export default function ProfilePage({ user, setUser }) {
           <label htmlFor="file" className="file-label">
             📷 Sélectionner une photo
           </label>
+
           <input
             id="file"
             type="file"
             accept="image/*"
             className="file-input"
-            onChange={(e) => setFile(e.target.files[0])}
+            onChange={(e) => {
+              const selectedFile = e.target.files[0];
+              setFile(selectedFile);
+
+              if (selectedFile) {
+                setPreview(URL.createObjectURL(selectedFile)); // 👈 preview immédiat
+              }
+            }}
           />
 
           <button type="submit" className="profile-btn">
