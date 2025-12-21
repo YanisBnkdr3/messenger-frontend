@@ -6,28 +6,24 @@ export default function ProfilePage({ user, setUser }) {
   const [file, setFile] = useState(null);
   const [preview, setPreview] = useState(user.profilePic || "");
 
-  // Convertir fichier → Base64
-  const toBase64 = (file) =>
-    new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = (error) => reject(error);
-    });
-
   const handleUpload = async (e) => {
     e.preventDefault();
     if (!file) return alert("Sélectionne une image !");
 
     try {
-      const base64Img = await toBase64(file);
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = async () => {
+        const base64Img = reader.result;
 
-      const res = await api.post("/upload/profile-pic", {
-        profilePic: base64Img,
-      });
+        const res = await api.post("/upload/profile-pic", {
+          profilePic: base64Img,
+        });
 
-      alert("Photo mise à jour !");
-      setUser({ ...user, profilePic: res.data.profilePic });
+        alert("Photo mise à jour !");
+        setUser({ ...user, profilePic: res.data.profilePic });
+        setPreview(res.data.profilePic);
+      };
     } catch (err) {
       console.error("❌ Erreur upload frontend:", err);
       alert("Erreur upload photo");
@@ -40,7 +36,7 @@ export default function ProfilePage({ user, setUser }) {
         <h2 className="profile-title">👤 Mon profil</h2>
 
         <img
-          src={preview || user.profilePic || "https://via.placeholder.com/120"}
+          src={preview || "https://via.placeholder.com/120"}
           alt="Profil"
           className="profile-avatar"
         />
@@ -57,11 +53,9 @@ export default function ProfilePage({ user, setUser }) {
             className="file-input"
             onChange={(e) => {
               const selectedFile = e.target.files[0];
+              if (!selectedFile) return;
               setFile(selectedFile);
-
-              if (selectedFile) {
-                setPreview(URL.createObjectURL(selectedFile)); // 👈 preview immédiat
-              }
+              setPreview(URL.createObjectURL(selectedFile)); // preview immédiat
             }}
           />
 
