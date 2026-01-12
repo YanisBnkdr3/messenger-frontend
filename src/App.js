@@ -51,43 +51,53 @@ function App() {
   // 🔹 Page Home
   if (page === "home") {
     return (
-      <div className="home-container">
-        {/* NAVBAR */}
-        <nav className="navbar">
-          <h2 className="logo">
-            <img
-              src="/favicon.jpg"
-              alt="Logo"
-              style={{ width: "24px", height: "24px", marginRight: "8px" }}
-            />
-            YB Chat
-          </h2>
+      <div className="home-wrapper">
+        <div className="animated-bg"></div>{" "}
+        {/* Arrière-plan animé opotionnel */}
+        <nav className="navbar-glass">
+          <div className="logo-container">
+            <img src="/favicon.jpg" alt="Logo" className="logo-img" />
+            <span className="logo-text">YB Chat</span>
+          </div>
         </nav>
+        <main className="hero-section">
+          <div className="hero-content">
+            <h1 className="hero-title">Connectez. Partagez. Créez.</h1>
+            <p className="hero-subtitle">
+              YB Chat : L'application de messagerie nouvelle génération pour des
+              conversations fluides et sécurisées.
+            </p>
 
-        {/* CONTENU */}
-        <main className="home-main">
-          <h1 className="home-title">Bienvenue sur YB Chat</h1>
-          <p className="home-description">
-            Discutez avec vos amis en toute simplicité. Ajoutez des contacts,
-            échangez des messages privés et profitez d’une expérience fluide et
-            moderne. 🌙 Mode sombre intégré pour un style élégant.
-          </p>
-          <div>
-            <button
-              onClick={() => {
-                setPage("auth");
-                setAuthMode("register");
-              }}
-              className="start-btn"
-            >
-              🚀 Commencer maintenant
-            </button>
+            <div className="features-grid">
+              <div className="feature-card">
+                <div className="icon-circle">🌙</div>
+                <h3>Mode Sombre Élégant</h3>
+                <p>Conçu pour le confort de vos yeux.</p>
+              </div>
+
+              <div className="feature-card active-card">
+                <div className="icon-circle">🚀</div>
+                <button
+                  onClick={() => {
+                    setPage("auth");
+                    setAuthMode("register");
+                  }}
+                  className="hero-btn"
+                >
+                  Commencez l'aventure
+                </button>
+              </div>
+
+              <div className="feature-card">
+                <div className="icon-circle">🛡️</div>
+                <h3>Discussions Sécurisées</h3>
+                <p>Vos données restent privées.</p>
+              </div>
+            </div>
           </div>
         </main>
-
-        {/* FOOTER */}
-        <footer className="footer">
-          © 2025 YB Chat – Créé par Yanis Benkeder
+        <footer className="footer-modern">
+          <p>© 2025 YB Chat – Design par Yanis Benkeder</p>
         </footer>
       </div>
     );

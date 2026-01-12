@@ -78,14 +78,13 @@
 
 .toggle-auth:hover {
   color: #9d4edd;
- 
 }
 .auth-toggle {
   margin-top: 15px;
   color: #9d4edd;
   font-weight: bold;
   cursor: pointer; /* 🔹 main au survol */
- 
+
   transition: color 0.3s ease;
 }
 
@@ -115,3 +114,4 @@
   .auth-toggle {
     font-size: 0.9rem;
   }
+}
